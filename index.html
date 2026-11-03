@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Task Manager</h1>
+      <p>Student ID: <span id="student-id">73369</span></p>
+      <p><a id="contribution-link" href="contribution.html">Go to Team Contribution Page</a></p>
+    </header>
+
+    <div id="status-message" class="status-msg"></div>
+
+    <section class="card">
+      <form id="task-form">
+        <input type="hidden" id="edit-task-id" value="">
+        <div class="form-group">
+          <label for="task-title">Title *</label>
+          <input type="text" id="task-title" placeholder="Enter task title" required>
+        </div>
+        <div class="form-group">
+          <label for="task-description">Description</label>
+          <textarea id="task-description" placeholder="Enter optional task description" rows="3"></textarea>
+        </div>
+        <div class="form-actions">
+          <button type="submit" id="task-submit">Add Task</button>
+          <button type="button" id="cancel-edit" style="display: none;">Cancel Edit</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="card">
+      <h2>Tasks</h2>
+      <div id="task-list">
+        <!-- Tasks rendered dynamically by app.js -->
+      </div>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

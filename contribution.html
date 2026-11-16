@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -12,6 +12,7 @@
       <h1>Team Contribution</h1>
       <p><a href="index.html">← Back to Task Manager</a></p>
     </header>
+
     <section class="card" style="text-align: center;">
       <p style="margin-bottom: 1.5rem;">Click the button below to load contributor information from <code>contribution.json</code>.</p>
       <button id="load-contributor" type="button" style="padding: 0.75rem 1.5rem; font-size: 1rem;">Show Contributor</button>
@@ -21,6 +22,7 @@
       </div>
     </section>
   </div>
+
   <script>
     document.getElementById("load-contributor").addEventListener("click", async () => {
       const displayEl = document.getElementById("contributor-student-id");
@@ -35,3 +37,10 @@
         } else {
           displayEl.textContent = "Error: contributorStudentId missing in JSON";
         }
+      } catch (err) {
+        displayEl.textContent = "Failed to load: " + err.message;
+      }
+    });
+  </script>
+</body>
+</html>
